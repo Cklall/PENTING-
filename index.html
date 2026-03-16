@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ini Penting!!!</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+}
+
+.page{
+    display:none;
+}
+
+.active{
+    display:block;
+}
+
+button{
+    padding:10px 20px;
+    margin:10px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body style="background-color: bisque;">
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <h1 style="font-size: 50px;"> Hai Alyak!!!</h1>
+    <img src="https://media.istockphoto.com/id/1219569661/vector/bye-emoticon.jpg?s=612x612&w=0&k=20&c=Gdz-6xJGbO7UNllSefyboxj3SrZHXb5RzQLNtLw4Yhg=">
+    <p>Aku bikin web ini karena ada beberapa hal yang mau aku tanyain</p>
+    <button onclick="nextPage(2)">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <h2>Sebelum lanjut nih, aku mau kamu jawab pertanyaan-pertanyaan ini dengan sejujur-jujurnya</h2>
+    <img src="https://i.pinimg.com/originals/7a/96/2f/7a962f85271b11310d961b24b28148c1.gif">
+    <p>Maka dari ituuuuu, kamu harus ngisi ini:</p>
+
+    <button onclick="nextPage(3)">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <h2>Pakta Integritas!!!!</h2>
+    <p>Saya yang bertanda tangan di bawah ini secara sadar dan sungguh-sungguh akan mengerjakan soal </p>
+    <p>Ujian Akhir Semester Isyarat dan Sistem dengan jujur, tidak bertanya, berdiskusi, dan bekerja sama</p>
+    <p>dengan teman/orang lain, tidak mencari pertolongan dengan cara, media, dan bentuk apapun (di luar </p>
+    <p>yang dijelaskan oleh dosen pengampu), dan tidak akan saling berbagi jawaban selama masa ujian</p>
+    <p>berlangsung. Bila saya melanggar, saya siap menerima konsekuensi berupa UAS saya yang tidak akan</p>
+    <p>dinilai sama sekali dan dianggap bernilai NOL.</p>
+    <p>Kota, Tanggal/Bulan/Tahun</p>
+    <p>Salsabila Nurul Annisa</p>
+
+<br>
+
+<label>
+<input type="radio" name="agreement" value="agree">
+<b>SETUJU!!!</b>
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="agreement" value="disagree">
+gmw
+</label>
+
+<br><br>
+
+<button onclick="checkTerms()">Next</button>
+
+</div>
+
+<div id="pageAgree" class="page">
+<h2>OKEEE karena udah setuju, kita lanjut yak</h2>
+<p>Apakah siap al?</p>
+<button onclick="nextPage(4)">SIAPP!!!!</button>
+</div>
+
+
+<div id="pageDisagree" class="page">
+<h2><b>...</b></h2>
+<img src="https://media.tenor.com/9inxwE3J3RcAAAAM/angry-thiago-mad.gif"height="500">
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+    <h1>Jujur, i like spending time sama kamu. Apakah kamu juga suka?</h1>
+    <img src="https://media.tenor.com/OBc0ZE8Wf8UAAAAM/hmm-thinking.gif"height="500">
+    <button onclick="nextPage(5)"><b>YESSSS!!!!</b></button>
+    <button onclick="goToNo()">enggk.</button>
+</div>
+
+<!-- PAGE 5 -->
+<div id="page5" class="page">
+    <h1>YEAAAYY!!!!</h1>
+    <img src="https://media.tenor.com/mnENEy4_O_AAAAAM/smiley-happy.gif"height="400">
+    <p>OKEEE LANJUTT</p>
+    <button onclick="nextPage(6)">Next</button>
+</div>
+
+<!-- PAGE 6 -->
+<div id="page6" class="page">
+    <h1>Karena kamu juga suka, aku mengajukan proposal untuk hangout lagi</h1>
+    <img src="https://media.tenor.com/-IFcEMrKwN8AAAAm/think-thinking.webp"height="300">
+    <p>Apakah kamu mau al?</p>
+    <button onclick="nextPage(7)"><b>MW DONG</b></button>
+    <button onclick="goToNo()">enggk.</button>
+</div>
+
+<!-- PAGE 7 -->
+<div id="page7" class="page">
+    <h1>OKEEE untuk tempat dan tanggalnyaa....</h1>
+    <p>Jujur aku suka ngobrol di GSP waktu sore-sore</p>
+    <p>Tapi kalo kamu ada saran tempat lain, bilang aja yak!</p>
+    <p>Untuk tanggalnya, lanjut diskusi di chat aja yess (aku cuma bisa ngoding sampe sini plss)</p>
+    <button onclick="nextPage(8)">Next</button>
+</div>
+
+<!-- PAGE 8 -->
+<div id="page8" class="page">
+    <h1>Udah sampe di akhir nih!</h1>
+    <p>Terima kasih alyak udah mau jawab pertanyaan-pertanyaanku tadi!</p>
+    <p>Mmf yeah website nya cuma seadanya</p>
+    <img src="https://cdn.sanity.io/images/bl383u0v/production/b8bf3938336ab457e1045e90fe737ce0c59f1cde-1500x1000.jpg">
+</div>
+
+<!-- PAGE NO -->
+<div id="pageNo" class="page">
+    <img src="https://media.tenor.com/-CfhczC_cREAAAAM/angai313-spongebob-sad.gif"height="500">
+</div>
+
+<script>
+
+function nextPage(pageNumber){
+
+    let pages = document.querySelectorAll(".page")
+
+    pages.forEach(function(p){
+        p.classList.remove("active")
+    })
+
+    document.getElementById("page"+pageNumber).classList.add("active")
+}
+
+function goToNo(){
+
+    let pages = document.querySelectorAll(".page")
+
+    pages.forEach(function(p){
+        p.classList.remove("active")
+    })
+
+    document.getElementById("pageNo").classList.add("active")
+}
+
+function checkTerms(){
+
+let choice = document.querySelector('input[name="agreement"]:checked')
+
+if(!choice){
+alert("Gabisa diskip wlek")
+return
+}
+
+let pages = document.querySelectorAll(".page")
+
+pages.forEach(function(p){
+p.classList.remove("active")
+})
+
+if(choice.value === "agree"){
+document.getElementById("pageAgree").classList.add("active")
+}
+else{
+document.getElementById("pageDisagree").classList.add("active")
+}
+
+}
+
+</script>
+
+</body>
+</html>
